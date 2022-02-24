@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B50961B6-6414-45D8-BD82-62255EB3400D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core.Data</RootNamespace>
+    <AssemblyName>Core.DataUA</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile24</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UNIVERSAL </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;UNIVERSAL PRODUCTION</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Candide.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseNoTrace|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>UNIVERSAL PRODUCTION</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <ProjectReference Include="..\FarseerPhysics\FarseerPhysicsUA.csproj">
+      <Project>{37323f74-0883-4711-b717-9c1e2930823f}</Project>
+      <Name>FarseerPhysicsUA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UndoRedoFramework\UndoRedoFrameworkUA.csproj">
+      <Project>{3b48eea4-a16d-4e28-9e34-35e9415a370d}</Project>
+      <Name>UndoRedoFrameworkUA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animations\ArmMotionTwoPose.cs" />
+    <Compile Include="Animations\BeatEffect.cs" />
+    <Compile Include="Animations\Behavior.cs" />
+    <Compile Include="Animations\Bite.cs" />
+    <Compile Include="Animations\MimicJoints.cs" />
+    <Compile Include="Animations\OneShot.cs" />
+    <Compile Include="Animations\TroichodalWave.cs" />
+    <Compile Include="Animations\PeriodicEffect.cs" />
+    <Compile Include="Animations\Pose.cs" />
+    <Compile Include="Animations\OrgansAction.cs" />
+    <Compile Include="Animations\JointFlex.cs" />
+    <Compile Include="Animations\ReachAround2.cs" />
+    <Compile Include="Animations\RegenerateMissingBodyParts.cs" />
+    <Compile Include="Animations\ScaleSystem.cs" />
+    <Compile Include="Animations\Scream.cs" />
+    <Compile Include="Animations\SelfCollide.cs" />
+    <Compile Include="Animations\Shrink.cs" />
+    <Compile Include="Animations\StabDown.cs" />
+    <Compile Include="Animations\Wave.cs" />
+    <Compile Include="Animations\Delay.cs" />
+    <Compile Include="Animations\Effect.cs" />
+    <Compile Include="Animations\Dizzyness.cs" />
+    <Compile Include="Animations\Filters\IKeyframeFilter.cs" />
+    <Compile Include="Animations\Filters\LimitFilter.cs" />
+    <Compile Include="Animations\Filters\OffsetFilter.cs" />
+    <Compile Include="Animations\Filters\TargetFilter.cs" />
+    <Compile Include="Animations\Glow.cs" />
+    <Compile Include="Animations\Keyframe.cs" />
+    <Compile Include="Animations\KeyframeComparer.cs" />
+    <Compile Include="Animations\LowFrequencyEffect.cs" />
+    <Compile Include="Animations\ArmMotion.cs" />
+    <Compile Include="Animations\ReachAround.cs" />
+    <Compile Include="Animations\SetBias.cs" />
+    <Compile Include="Animations\Seizure.cs" />
+    <Compile Include="Animations\Stoop.cs" />
+    <Compile Include="Animations\StraightJabOrGrab.cs" />
+    <Compile Include="Animations\Swoon.cs" />
+    <Compile Include="Animations\WindGust.cs" />
+    <Compile Include="Collections\BehaviorCollection.cs" />
+    <Compile Include="Collections\EntityCollection.cs" />
+    <Compile Include="Collections\JointCollection.cs" />
+    <Compile Include="Collections\KeyframeCollection.cs" />
+    <Compile Include="Collections\EffectCollection.cs" />
+    <Compile Include="Collections\ObservableHashSet.cs" />
+    <Compile Include="Collections\PoweredJointCollection.cs" />
+    <Compile Include="CollisionEffects.cs" />
+    <Compile Include="Entity\Creature\Mind.cs" />
+    <Compile Include="Entity\Creature\Sensor.cs" />
+    <Compile Include="Entity\Creature\Spirit.cs" />
+    <Compile Include="Entity\EntityHelper.cs" />
+    <Compile Include="Entity\Planet\Planet.cs" />
+    <Compile Include="Geometry\BoundingSphere.cs" />
+    <Compile Include="Geometry\ControlPoints.cs" />
+    <Compile Include="Geometry\GeomUtils.cs" />
+    <Compile Include="Geometry\GraphWalker.cs" />
+    <Compile Include="Input\GameKey.cs" />
+    <Compile Include="Interfaces\IApp.cs" />
+    <Compile Include="Interfaces\ILevelPlugin.cs" />
+    <Compile Include="Interfaces\IPluginBase.cs" />
+    <Compile Include="Interfaces\SysLog.cs" />
+    <Compile Include="Interfaces\IPlugin.cs" />
+    <Compile Include="Level.cs" />
+    <Compile Include="ObfuscationAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Candide.snk" />
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.IO, Version=1.5.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.10\lib\portable-net40+sl5+win8+wp8+wpa81\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.10\lib\portable-net40+sl5+win8+wp8+wpa81\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.10\lib\portable-net40+sl5+win8+wp8+wpa81\System.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

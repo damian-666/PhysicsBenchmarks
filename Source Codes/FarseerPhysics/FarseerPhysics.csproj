@@ -1,0 +1,107 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FarseerPhysics</RootNamespace>
+    <Configurations>Debug;Release;ReleasePdb;ReleaseNoTrace</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <OutputPath>..\..\Bin.Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePdb|AnyCPU'">
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <OutputPath>..\..\Bin.ReleasePdb\</OutputPath>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;PRODUCTION</DefineConstants>
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Common\PhysicsLogic\**" />
+    <Compile Remove="Diagnostic2\**" />
+    <Compile Remove="Diagnostics\**" />
+    <Compile Remove="Dynamics\Joints\JointAnchorcleanupabortedbrokeregen\**" />
+    <Compile Remove="Fluids\**" />
+    <EmbeddedResource Remove="Common\PhysicsLogic\**" />
+    <EmbeddedResource Remove="Diagnostic2\**" />
+    <EmbeddedResource Remove="Diagnostics\**" />
+    <EmbeddedResource Remove="Dynamics\Joints\JointAnchorcleanupabortedbrokeregen\**" />
+    <EmbeddedResource Remove="Fluids\**" />
+    <None Remove="Common\PhysicsLogic\**" />
+    <None Remove="Diagnostic2\**" />
+    <None Remove="Diagnostics\**" />
+    <None Remove="Dynamics\Joints\JointAnchorcleanupabortedbrokeregen\**" />
+    <None Remove="Fluids\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Common\Decomposition\Point.cs" />
+    <Compile Remove="Common\FFT.cs" />
+    <Compile Remove="Common\FFT_CL.cs" />
+    <Compile Remove="Controllers\SimpleWindForce.cs" />
+    <Compile Remove="DebugViewBase.cs" />
+    <Compile Remove="DebugViewFlags.cs" />
+    <Compile Remove="Dynamics\BodyDelayCollision.cs" />
+    <Compile Remove="Dynamics\Contacts\ContactSolverCudastart.cs" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+    <Compile Remove="Shadows\FastTrigJava.cs" />
+    <Compile Remove="Shadows\VisibilityPolygonCSharp - Copy.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="FarseerPhysicsUA.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Diagnostics\DebugViewBase.cs" />
+    <Compile Include="Diagnostics\DebugViewFlags.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UndoRedoFramework\UndoRedoFramework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Core.Data">
+      <HintPath>..\..\GameBin.Debug\Core.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  
+  <PropertyGroup>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <BaseOutputPath>..\..\bin</BaseOutputPath>
+    <RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\Bin.Release\</OutputPath>
+    <DefineConstants>TRACE;PRODUCTION</DefineConstants>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseNoTrace|AnyCPU'">
+    <OutputPath>..\..\Bin.Release\</OutputPath>
+    <DefineConstants>PRODUCTION</DefineConstants>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
+</Project>

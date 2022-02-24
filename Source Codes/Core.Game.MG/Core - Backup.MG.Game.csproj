@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;MONOGAME </DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;MONOGAME </DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Game1.cs" />
+    <Compile Remove="PluginCompiler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Storage\Serialization.cs" Link="Serialization.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core.Data\Core.Data.csproj" />
+    <ProjectReference Include="..\Core.Game\Core.Game.csproj" />
+    <ProjectReference Include="..\FarseerPhysics\FarseerPhysics.csproj" />
+    <ProjectReference Include="..\UndoRedoFramework\UndoRedoFramework.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Analysis\" />
+    <Folder Include="Assets\" />
+    <Folder Include="Utils\" />
+  </ItemGroup>
+  <Import Project="..\FarseerPhysicsView\FarseerPhysicsView.MG.projitems" Label="Shared" />
+</Project>

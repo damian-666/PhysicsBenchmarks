@@ -1,0 +1,13 @@
+{
+  Configurations: {
+    "Debug": {
+    
+      LabelDigits: 2
+    },
+    
+    "Release": {
+      BumpPatch: true,
+      ResetLabel: "dev"
+    }
+  }
+}

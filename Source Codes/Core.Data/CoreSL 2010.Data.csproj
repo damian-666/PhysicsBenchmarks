@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{14822DC4-72C4-4E1A-9FF6-131BB651FB0B}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoreSL.Data</RootNamespace>
+    <AssemblyName>CoreSL.Data</AssemblyName>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>false</ThrowErrorsInValidation>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Candide.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\DebugSL\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\ReleaseSL\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT PRODUCTION</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animations\ArmMotionTwoPose.cs" />
+    <Compile Include="Animations\BeatEffect.cs" />
+    <Compile Include="Animations\Behavior.cs" />
+    <Compile Include="Animations\Bite.cs" />
+    <Compile Include="Animations\TroichodalWave.cs" />
+    <Compile Include="Animations\PeriodicEffect.cs" />
+    <Compile Include="Animations\Pose.cs" />
+    <Compile Include="Animations\OrgansAction.cs" />
+    <Compile Include="Animations\Lean.cs" />
+    <Compile Include="Animations\JointFlex.cs" />
+    <Compile Include="Animations\ReachAround2.cs" />
+    <Compile Include="Animations\RegenerateMissingBodyParts.cs" />
+    <Compile Include="Animations\ScaleSystem.cs" />
+    <Compile Include="Animations\Scream.cs" />
+    <Compile Include="Animations\SelfCollide.cs" />
+    <Compile Include="Animations\Shrink.cs" />
+    <Compile Include="Animations\StabDown.cs" />
+    <Compile Include="Animations\Wave.cs" />
+    <Compile Include="Animations\Delay.cs" />
+    <Compile Include="Animations\Effect.cs" />
+    <Compile Include="Animations\Dizzyness.cs" />
+    <Compile Include="Animations\Filters\IKeyframeFilter.cs" />
+    <Compile Include="Animations\Filters\LimitFilter.cs" />
+    <Compile Include="Animations\Filters\OffsetFilter.cs" />
+    <Compile Include="Animations\Filters\TargetFilter.cs" />
+    <Compile Include="Animations\Glow.cs" />
+    <Compile Include="Animations\Keyframe.cs" />
+    <Compile Include="Animations\KeyframeComparer.cs" />
+    <Compile Include="Animations\LowFrequencyEffect.cs" />
+    <Compile Include="Animations\ArmMotion.cs" />
+    <Compile Include="Animations\ReachAround.cs" />
+    <Compile Include="Animations\Relax.cs" />
+    <Compile Include="Animations\Seizure.cs" />
+    <Compile Include="Animations\Stoop.cs" />
+    <Compile Include="Animations\StraightJabOrGrab.cs" />
+    <Compile Include="Animations\Swoon.cs" />
+    <Compile Include="Animations\WindGust.cs" />
+    <Compile Include="Collections\BehaviorCollection.cs" />
+    <Compile Include="Collections\EntityCollection.cs" />
+    <Compile Include="Collections\JointCollection.cs" />
+    <Compile Include="Collections\KeyframeCollection.cs" />
+    <Compile Include="Collections\EffectCollection.cs" />
+    <Compile Include="Collections\ObservableCollectionS.cs" />
+    <Compile Include="Collections\ObservableCollectionUndoable.cs" />
+    <Compile Include="Collections\ObservableHashSet.cs" />
+    <Compile Include="Collections\PoweredJointCollection.cs" />
+    <Compile Include="Entity\Creature\Mind.cs" />
+    <Compile Include="Entity\Creature\Sensor.cs" />
+    <Compile Include="Entity\Creature\Spirit.cs" />
+    <Compile Include="Entity\EntityHelper.cs" />
+    <Compile Include="Entity\Planet\Planet.cs" />
+    <Compile Include="Geometry\BoundingSphere.cs" />
+    <Compile Include="Geometry\GeomUtils.cs" />
+    <Compile Include="Geometry\GraphWalker.cs" />
+    <Compile Include="Input\GameKey.cs" />
+    <Compile Include="Interfaces\IPhysicsObject.cs" />
+    <Compile Include="Interfaces\NotifyPropertyBase.cs" />
+    <Compile Include="Interfaces\SysLog.cs" />
+    <Compile Include="Level\CollisionEffects.cs" />
+    <Compile Include="Level\Level.cs" />
+    <Compile Include="ObfuscationAttribute.cs" />
+    <Compile Include="Interfaces\IPlugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FarseerPhysics\FarseerPhysics3 2010.2SL.csproj">
+      <Project>{D97DA44A-043A-459D-8AB6-56F55B2BBECC}</Project>
+      <Name>FarseerPhysics3 2010.2SL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UndoRedoFramework\UndoRedoFrameworkSL 2010.csproj">
+      <Project>{0CF2404B-B228-43E7-969C-800AA9948E97}</Project>
+      <Name>UndoRedoFrameworkSL 2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Candide.snk">
+      <Link>Candide.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,9 @@
+﻿MG discussion group said resouces need be compile each platfomr.. so i linked in souces
+
+but never got content building proper or loaing so liek nez we precompitel the and stick them in as embedded reousrces for now
+
+we are buildlgin for desktop gl but see them in andord nad windows dx so seems ok so far
+
+mp3 might be harder, not sure.. TODO frist type precompiling mp3. ad xnb then stick in here and playt hte sound as efffect
+
+we can play one 
