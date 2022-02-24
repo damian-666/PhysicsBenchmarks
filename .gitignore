@@ -348,3 +348,9 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/Bin.Debug/UndoRedoFramework.dll.config
+/Bin.Debug/UndoRedoFramework.dll
+/Bin.Debug/UndoRedoFramework.deps.json
+/Bin.Debug/FarseerPhysics.dll.config
+/Bin.Debug/FarseerPhysics.dll
+/Bin.Debug/FarseerPhysics.deps.json
