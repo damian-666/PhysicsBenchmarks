@@ -17,7 +17,7 @@ namespace BenchmarkTests // Note: actual namespace depends on the project name.
         {
             Console.WriteLine("Physics comparison xna vec");
                 PhysicsTests.CDTDecompose();
-
+            PhysicsTests.ToiBenchmark.TOItest(1000);
         }
 
         

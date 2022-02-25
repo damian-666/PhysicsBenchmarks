@@ -23,6 +23,7 @@ namespace BenchmarkTests // Note: actual namespace depends on the project name.
         {
             Console.WriteLine("Physics comparison Numerics");
             PhysicsTests.CDTDecompose();
+            PhysicsTests.ToiBenchmark.TOItest(1000);
 
         }
 

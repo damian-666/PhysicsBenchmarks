@@ -278,6 +278,14 @@ namespace FarseerPhysics.Collision
         [ThreadStatic]
         private static DistanceInput _distanceInput;
 
+
+
+        public static void CalculateTimeOfImpact(out TOIOutput output, ref TOIInput input)
+        {
+
+            CalculateTimeOfImpact( out output,  input );
+        }
+
         /// <summary>
         /// Compute the upper bound on time before two shapes penetrate. Time is represented as
         /// a fraction between [0,tMax]. This uses a swept separating axis and may miss some intermediate,
