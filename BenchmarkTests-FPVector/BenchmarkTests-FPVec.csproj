@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Source Codes\FarseerPhysics\FarseerPhysics.csproj" />
+    <ProjectReference Include="..\Source Codes\Farseer-Physics\Farseer-Physics-Standard.csproj" />
+    <ProjectReference Include="..\Source Codes\UndoRedoFramework\UndoRedoFramework.csproj" />
   </ItemGroup>
 
 </Project>

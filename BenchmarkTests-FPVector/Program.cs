@@ -1,5 +1,4 @@
-﻿global using Farseer.Xna.Framework;
-
+﻿global using System.Numerics;
 using System;
 using FarseerPhysics.Common;
 using FarseerPhysics.Common.Decomposition;
@@ -7,19 +6,26 @@ using FarseerPhysics.Common.Decomposition;
 using FarseerPhysics.Factories;
 
 
-using Timers;
+
+using System.Timers;
+
+
+
 
 namespace BenchmarkTests // Note: actual namespace depends on the project name.
 {
     internal class Program
     {
+
+
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Physics comparison xna vec");
-                PhysicsTests.CDTDecompose();
+            Console.WriteLine("Physics comparison Numerics");
+            PhysicsTests.CDTDecompose();
 
         }
 
-        
+    
     }
 }

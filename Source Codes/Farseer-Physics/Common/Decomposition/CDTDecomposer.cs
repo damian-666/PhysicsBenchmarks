@@ -1,46 +1,39 @@
-﻿/* Poly2Tri
- * Copyright (c) 2009-2010, Poly2Tri Contributors
- * http://code.google.com/p/poly2tri/
- *
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without modification,
- * are permitted provided that the following conditions are met:
- *
- * * Redistributions of source code must retain the above copyright notice,
- *   this list of conditions and the following disclaimer.
- * * Redistributions in binary form must reproduce the above copyright notice,
- *   this list of conditions and the following disclaimer in the documentation
- *   and/or other materials provided with the distribution.
- * * Neither the name of Poly2Tri nor the names of its contributors may be
- *   used to endorse or promote products derived from this software without specific
- *   prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
- * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
- * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
- * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
- * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
+﻿/*
+* Farseer Physics Engine:
+* Copyright (c) 2012 Ian Qvist
+*/
 
 using System.Collections.Generic;
 using System.Diagnostics;
-using Farseer.Xna.Framework;
-using Poly2Tri.Triangulation;
-using Poly2Tri.Triangulation.Delaunay;
-using Poly2Tri.Triangulation.Delaunay.Sweep;
-using Poly2Tri.Triangulation.Polygon;
+using FarseerPhysics.Common.Decomposition.CDT;
+using FarseerPhysics.Common.Decomposition.CDT.Delaunay;
+using FarseerPhysics.Common.Decomposition.CDT.Delaunay.Sweep;
+using FarseerPhysics.Common.Decomposition.CDT.Polygon;
+using System.Numerics;
 
 namespace FarseerPhysics.Common.Decomposition
 {
+    /// <summary>
+    /// 2D constrained Delaunay triangulation algorithm.
+    /// Based on the paper "Sweep-line algorithm for constrained Delaunay triangulation" by V. Domiter and and B. Zalik
+    /// 
+    /// Properties:
+    /// - Creates triangles with a large interior angle.
+    /// - Supports holes
+    /// - Generate a lot of garbage due to incapsulation of the Poly2Tri library.
+    /// - Running time is O(n^2), n = number of vertices.
+    /// - Does not care about winding order.
+    /// 
+    /// Source: http://code.google.com/p/poly2tri/
+    /// </summary>
     public static class CDTDecomposer
     {
+
+        /// <summary>
+        /// doesnt support holes, from an older version of farseer
+        /// </summary>
+        /// <param name="vertices"></param>
+        /// <returns></returns>
         public static List<Vertices> ConvexPartition(Vertices vertices)
         {
             Polygon poly = new Polygon();
@@ -61,7 +54,7 @@ namespace FarseerPhysics.Common.Decomposition
                 Vertices v = new Vertices();
                 foreach (TriangulationPoint p in triangle.Points)
                 {
-                    v.Add(new Vector2((float) p.X, (float) p.Y));
+                    v.Add(new Vector2((float)p.X, (float)p.Y));
                 }
                 results.Add(v);
             }
@@ -69,7 +62,9 @@ namespace FarseerPhysics.Common.Decomposition
             return results;
         }
 
-#if HOLES
+        /// <summary>
+        /// Decompose the polygon into several smaller non-concave polygon., renamed came with farseer standard
+        /// </summary>
         public static List<Vertices> ConvexPartitionHoles(Vertices vertices)
         {
             Debug.Assert(vertices.Count > 3);
@@ -110,15 +105,5 @@ namespace FarseerPhysics.Common.Decomposition
 
             return results;
         }
-#endif
     }
 }
-
-
-
-
-
-
-
-
-
