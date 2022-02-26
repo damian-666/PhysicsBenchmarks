@@ -49,9 +49,6 @@ namespace BenchmarkTests
                     vertsList.Add(poly);
 
                 }
-
-
-
             }
 
             Console.WriteLine("dt ticks :" + StopWatchTimer.LastResultTicks);

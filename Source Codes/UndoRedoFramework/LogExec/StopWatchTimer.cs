@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
+
 
 namespace Timers
 {
 
 
     /// <summary>
-    ///  this class has static itesms for averaging only one can be used at a time but 
+    ///  this class has static itesms for timing only one can be used at a time but 
    /// usage:  using new ( StopWatchTimer("100 iterations fucnctionX")){ funcgtionx;};
     /// </summary>
 
@@ -17,18 +16,6 @@ namespace Timers
         static long startTime = 0;
 
         static Stopwatch stopwatch = new Stopwatch();
-
-        static int frameCount = 0;
-
-        static int cumulatedtime = 0;
-
-
-        static bool ConsoleOuput = true;
-
-
-        //time measurement  in sec
-        double dt = 0;
-
   
         /// <summary>
         /// optional , name this measurement, output trace will contain name
