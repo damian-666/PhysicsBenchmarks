@@ -11,16 +11,21 @@ using Timers;
 namespace BenchmarkTests
 {
 
- 
+    
     public class PhysicsTests
     {
 
-        const int ITERATIONS = 100000;
+        public const int ITERATIONS = 100000;
 
         [System.Runtime.InteropServices.DllImport("winmm.dll", EntryPoint = "timeBeginPeriod")]
         public static extern uint timeBeginPeriod(uint uMilliseconds);
 
 
+        public struct vecCop
+        {
+            public float x;
+            public  float y;
+        }
 
         public  static void  SetTimerRes(uint ms = 1)
         {
@@ -28,7 +33,7 @@ namespace BenchmarkTests
 
         }
 
-        public static void NormaizeVec2Test(int count = ITERATIONS)
+        public static void NormaizeVec2Test(int count = ITERATIONS, bool copyVec = false)
         {
 
 
@@ -50,8 +55,23 @@ namespace BenchmarkTests
 
                     total += vec;
                     Vector2.Normalize(vec);
-                    total += vec;
+      
 
+
+                    if (copyVec)
+                    {
+                        var copy = new vecCop();
+                       
+                        copy.x = vec.X;
+
+                        copy.y = vec.Y;
+
+                        total.X += copy.x;
+                        total.Y += copy.y;
+
+                    }
+                    else
+                        total += vec;
 
                 }
 

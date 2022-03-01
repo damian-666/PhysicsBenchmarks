@@ -24,7 +24,7 @@ namespace BenchmarkTests // Note: actual namespace depends on the project name.
             }
 
 
-            PhysicsTests.NormaizeVec2Test();
+            PhysicsTests.NormaizeVec2Test(PhysicsTests.ITERATIONS,true);
             PhysicsTests.CDTDecompose();
             PhysicsTests.ToiBenchmark.TOItest();
             
