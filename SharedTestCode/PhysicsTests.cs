@@ -98,8 +98,6 @@ namespace BenchmarkTests
 
                 input.ProxyA.Set(_shapeA, 0);
 
-                float dist = 0;
-
               input.ProxyB = new DistanceProxy();
 
                     input.ProxyB.Set(_shapeB, 0);
@@ -119,7 +117,7 @@ namespace BenchmarkTests
 
 
 
-            public static void TOItest(int count)
+            public static void TOItest(int count = ITERATIONS)
             {
 
                 ToiBenchmark benchmark = new ToiBenchmark();
@@ -146,16 +144,62 @@ namespace BenchmarkTests
 
 
                     }
-            }
+                }
 
 
-
+        
                 Console.WriteLine(" toi test  " + StopWatchTimer.LastResultTicks);
 
                 Console.WriteLine("toi touches " + touches);  //jut so it wont be optimized out use the result
 
 
             }
+
+
+
+
         }
+
+
+
+
+
+        public static void NormaizeVec2Test(int count = ITERATIONS)
+        {
+
+
+
+            Vector2 total = Vector2.Zero;
+
+            Vector2 vec = Vector2.Zero;
+
+            Random random = new Random();
+
+            using (new StopWatchTimer("Vec2normalize"))
+            {
+
+                for (int i = 0; i < count; i++)
+                {
+
+                    vec.X = random.NextSingle();
+                    vec.Y = random.NextSingle();
+
+                    total += vec;
+                    Vector2.Normalize(vec);
+                    total += vec;
+
+
+                }
+
+            }
+
+
+            Console.WriteLine(" vec2 test  " + StopWatchTimer.LastResultTicks);
+
+            Console.WriteLine("vec2 " + total);  //jut so it wont be optimized out use the result
+
+
+        }
+
     }
 }

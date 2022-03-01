@@ -22,8 +22,17 @@ namespace BenchmarkTests // Note: actual namespace depends on the project name.
         static void Main(string[] args)
         {
             Console.WriteLine("Physics comparison Numerics");
+
+
+            unsafe
+            {
+                int size = sizeof(Vector2);
+                Console.WriteLine("Vector2 Size " + size);
+
+            }
             PhysicsTests.CDTDecompose();
-            PhysicsTests.ToiBenchmark.TOItest(1000);
+            PhysicsTests.ToiBenchmark.TOItest();
+            PhysicsTests.NormaizeVec2Test();
 
         }
 
