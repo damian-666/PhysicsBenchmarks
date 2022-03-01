@@ -14,6 +14,49 @@ namespace BenchmarkTests
     {
 
         const int ITERATIONS = 100000;
+
+
+
+
+
+
+
+        public static void NormaizeVec2Test(int count = ITERATIONS)
+        {
+
+
+
+            Vector2 total = Vector2.Zero;
+
+            Vector2 vec = Vector2.Zero;
+
+            Random random = new Random();
+
+            using (new StopWatchTimer("Vec2normalize"))
+            {
+
+                for (int i = 0; i < count; i++)
+                {
+
+                    vec.X = random.NextSingle();
+                    vec.Y = random.NextSingle();
+
+                    total += vec;
+                    Vector2.Normalize(vec);
+                    total += vec;
+
+
+                }
+
+            }
+
+
+            Console.WriteLine(" vec2 test  " + StopWatchTimer.LastResultTicks);
+
+            Console.WriteLine("vec2 " + total);  //jut so it wont be optimized out use the result
+
+
+        }
         public static void CDTDecompose()
         {
             Vertices verts = new Vertices();
@@ -164,42 +207,6 @@ namespace BenchmarkTests
 
 
 
-        public static void NormaizeVec2Test(int count = ITERATIONS)
-        {
-
-
-
-            Vector2 total = Vector2.Zero;
-
-            Vector2 vec = Vector2.Zero;
-
-            Random random = new Random();
-
-            using (new StopWatchTimer("Vec2normalize"))
-            {
-
-                for (int i = 0; i < count; i++)
-                {
-
-                    vec.X = random.NextSingle();
-                    vec.Y = random.NextSingle();
-
-                    total += vec;
-                    Vector2.Normalize(vec);
-                    total += vec;
-
-
-                }
-
-            }
-
-
-            Console.WriteLine(" vec2 test  " + StopWatchTimer.LastResultTicks);
-
-            Console.WriteLine("vec2 " + total);  //jut so it wont be optimized out use the result
-
-
-        }
 
     }
 }

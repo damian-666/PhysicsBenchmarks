@@ -1,13 +1,4 @@
 ﻿global using System.Numerics;
-using System;
-using FarseerPhysics.Common;
-using FarseerPhysics.Common.Decomposition;
-
-using FarseerPhysics.Factories;
-
-
-
-using System.Timers;
 
 
 
@@ -30,9 +21,11 @@ namespace BenchmarkTests // Note: actual namespace depends on the project name.
                 Console.WriteLine("Vector2 Size " + size);
 
             }
+
+            PhysicsTests.NormaizeVec2Test();
             PhysicsTests.CDTDecompose();
             PhysicsTests.ToiBenchmark.TOItest();
-            PhysicsTests.NormaizeVec2Test();
+            
 
         }
 

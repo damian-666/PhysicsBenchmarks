@@ -1,13 +1,5 @@
 ﻿global using Farseer.Xna.Framework;
 
-using System;
-using FarseerPhysics.Common;
-using FarseerPhysics.Common.Decomposition;
-
-using FarseerPhysics.Factories;
-
-
-using Timers;
 
 namespace BenchmarkTests // Note: actual namespace depends on the project name.
 {
@@ -25,10 +17,11 @@ namespace BenchmarkTests // Note: actual namespace depends on the project name.
 
             }
 
-                PhysicsTests.CDTDecompose();
-            PhysicsTests.ToiBenchmark.TOItest();
 
             PhysicsTests.NormaizeVec2Test();
+            PhysicsTests.CDTDecompose();
+            PhysicsTests.ToiBenchmark.TOItest();
+
         }
 
         
