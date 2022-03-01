@@ -88,22 +88,31 @@ namespace BenchmarkTests
 
             List<List<Vertices>> vertsList = new List<List<Vertices>>();
 
+
+            int count = 0;
             using (new StopWatchTimer("CDTtest"))
             {
 
                 for (int i = 0; i < ITERATIONS; i++)
                 {
 
-                    var poly = FarseerPhysics.Common.Decomposition.CDTDecomposer.ConvexPartition(verts);
+                    //    var poly = FarseerPhysics.Common.Decomposition.CDTDecomposer.ConvexPartition(verts);
 
-                    vertsList.Add(poly);
 
+                    //   var poly = FarseerPhysics.Common.Decomposition.SeidelDecomposer.ConvexPartition(verts,0.1f);
+
+
+
+                    var poly = FarseerPhysics.Common.Decomposition.EarclipDecomposer.ConvexPartition(verts);
+
+                    //  vertsList.Add(poly);
+                    count += poly.Count;
                 }
             }
 
             Console.WriteLine("dt ticks :" + StopWatchTimer.LastResultTicks);
 
-
+            Console.WriteLine(" parts + " + count);
 
             Console.WriteLine(" parts + " + vertsList.Count);
         }
