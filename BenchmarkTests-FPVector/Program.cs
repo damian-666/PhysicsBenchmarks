@@ -15,12 +15,14 @@ namespace BenchmarkTests // Note: actual namespace depends on the project name.
             Console.WriteLine("Physics comparison Numerics");
 
 
+            PhysicsTests.SetTimerRes(1);
             unsafe
             {
                 int size = sizeof(Vector2);
                 Console.WriteLine("Vector2 Size " + size);
 
             }
+
 
             PhysicsTests.NormaizeVec2Test();
             PhysicsTests.CDTDecompose();

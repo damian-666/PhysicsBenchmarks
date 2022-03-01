@@ -10,16 +10,23 @@ using Timers;
 
 namespace BenchmarkTests
 {
+
+ 
     public class PhysicsTests
     {
 
         const int ITERATIONS = 100000;
 
+        [System.Runtime.InteropServices.DllImport("winmm.dll", EntryPoint = "timeBeginPeriod")]
+        public static extern uint timeBeginPeriod(uint uMilliseconds);
 
 
 
+        public  static void  SetTimerRes(uint ms = 1)
+        {
+           timeBeginPeriod( ms);
 
-
+        }
 
         public static void NormaizeVec2Test(int count = ITERATIONS)
         {
